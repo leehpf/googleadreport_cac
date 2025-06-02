@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>RACAE 成效報表</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+    }
+    .section {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin: 0.75rem 0;
+      font-weight: 600;
+    }
+    ul {
+      margin-left: 1.5rem;
+      line-height: 1.8;
+    }
+    .icon {
+      display: inline-block;
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="section">
+      <h1>📊 Google 搜尋廣告成效報表</h1>
+      <p>廣告期間：2025/5/12–5/27</p>
+    </div>
+
+    <div class="section">
+      <h2>📌 Conclusion 結論</h2>
+      <p>轉換率高達 20.22%，CPC 低於市場平均，顯示本期素材與預算配置表現出色。</p>
+    </div>
+
+    <div class="section">
+      <h2>🧾 Record 紀錄</h2>
+      <ul>
+        <li>點擊數：272</li>
+        <li>曝光次數：6,749</li>
+        <li>點閱率：4.03%</li>
+        <li>CPC：NT$4.23</li>
+        <li>CPM：NT$170.45</li>
+        <li>轉換次數：55</li>
+        <li>轉換率：20.22%</li>
+        <li>每次轉換成本：NT$20.92</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>📈 Analysis 圖表</h2>
+      <canvas id="barChart" height="300"></canvas>
+    </div>
+
+    <div class="section">
+      <h2>🔍 Assumption 假設</h2>
+      <ul>
+        <li>素材與 CTA 表現良好，是轉換數提升主因。</li>
+        <li>轉換率明顯優於上期，CPC 穩定下降。</li>
+        <li>預算提高有助穩定曝光與轉換效率。</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🧪 Experiment 驗證</h2>
+      <ul>
+        <li>後續建議針對熱門關鍵字執行 A/B 測試。</li>
+        <li>針對高轉換族群優化落地頁 CTA。</li>
+        <li>增加品牌與地區型字詞組合，提高搜尋意圖命中率。</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    new Chart(document.getElementById('barChart').getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: ['點擊數', '曝光次數', '點閱率 (%)', 'CPC (NT$)', '轉換率 (%)'],
+        datasets: [{
+          label: '本期表現',
+          data: [272, 6749, 4.03, 4.23, 20.22],
+          backgroundColor: '#3b82f6'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
